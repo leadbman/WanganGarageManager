@@ -1136,7 +1136,7 @@
             // 
             // tabNeons
             // 
-            this.tabNeons.Controls.Add(this.label1);
+            // this.tabNeons.Controls.Add(this.label1);
             this.tabNeons.Controls.Add(this.lstNeons);
             this.tabNeons.Location = new System.Drawing.Point(4, 26);
             this.tabNeons.Name = "tabNeons";
@@ -1147,15 +1147,15 @@
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(806, 142);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "These parts are not available due to no emulators supporting it.";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            // this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // this.label1.ForeColor = System.Drawing.Color.Silver;
+            // this.label1.Location = new System.Drawing.Point(0, 0);
+            // this.label1.Name = "label1";
+            // this.label1.Size = new System.Drawing.Size(806, 142);
+            // this.label1.TabIndex = 16;
+            // this.label1.Text = "These parts are not available due to no emulators supporting it.";
+            // this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lstNeons
             // 
