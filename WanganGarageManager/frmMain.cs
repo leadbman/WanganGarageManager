@@ -25,11 +25,12 @@ namespace WanganGarageManager
 
         public frmMain()
         {
-            if (!File.Exists("wmn5r.exe"))
+            // Remove exe check (so users can put it inside their custom user folders)
+            /*if (!File.Exists("wmn5r.exe"))
             {
                 MessageBox.Show("The garage manager has not been placed in the correct directory, please place it with your game files, where wmn5r.exe is.", "Wangan garage manager is in the wrong folder!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
-            }
+            }*/
             InitializeComponent();
             Localisation.InitMain();
             Localisation.InitEditor();
@@ -56,9 +57,10 @@ namespace WanganGarageManager
                     } else {
                         lstGarage.Columns[1].Text = "HP";
                     }
-                    if (Directory.Exists("OpenParrot_Cars"))
-                    {
-                        foreach (string file in Directory.GetFiles("OpenParrot_Cars", "*.car"))
+                    // if (Directory.Exists("OpenParrot_Cars"))
+                    // {
+                    CurrentDirectorySearch = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+                        foreach (string file in Directory.GetFiles(CurrentDirectorySearch, "*.car", SearchOption.AllDirectories))
                         {
                             GarageCar car = new GarageCar(file);
                             car.LoadCar();
@@ -69,8 +71,8 @@ namespace WanganGarageManager
                                 lblNoCars.Visible = false;
                             }
                         }
-                    }
-                    if (Directory.Exists("Teknoparrot_Cars"))
+                    // }
+                    /*if (Directory.Exists("Teknoparrot_Cars"))
                     {
                         foreach (string file in Directory.GetFiles("Teknoparrot_Cars", "*.car"))
                         {
@@ -97,7 +99,7 @@ namespace WanganGarageManager
                                 lblNoCars.Visible = false;
                             }
                         }
-                    }
+                    }*/
                     break;
                 case (int)tabs.settings:
                     cmbGarageView.SelectedIndex = Array.IndexOf(listViewTypes, Properties.Settings.Default.garageViewType);
