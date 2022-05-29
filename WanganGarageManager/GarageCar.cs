@@ -65,7 +65,7 @@ namespace WanganGarageManager
             customColour = data[0x34];
             wheels = data[0x38];
             wheelColour = data[0x3C];
-            neons = 0x00;
+            neons = data[0x7C];
 
             bodyKit = data[0x40];
             hood = data[0x44];
@@ -106,7 +106,7 @@ namespace WanganGarageManager
             data[0x34] = customColour;
             data[0x38] = wheels;
             data[0x3C] = wheelColour;
-            //neons = 0x00;
+            data[0x7C] = neons;
 
             data[0x40] = bodyKit;
             data[0x44] = hood;
@@ -243,6 +243,8 @@ namespace WanganGarageManager
         {
             if (neons != value)
             {
+                neons = (byte)value;
+                hasSaved = false;
             }
         }
 
