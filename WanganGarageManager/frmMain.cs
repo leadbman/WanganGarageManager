@@ -59,25 +59,25 @@ namespace WanganGarageManager
                     }
 
                     // Check inside user directory
-                        var CurrentDirectory = Directory.GetCurrentDirectory();
+			var CurrentDirectory = Directory.GetCurrentDirectory();
 
-                        foreach (string dir in Directory.GetDirectories(CurrentDirectory, "*"))//, SearchOption.AllDirectories
-                        {
-							foreach (string dir2 in Directory.GetDirectories(dir, "*"))//, SearchOption.AllDirectories
-							{
-								foreach (string file in Directory.GetFiles(dir2 + "\\", "*.car"))//, SearchOption.AllDirectories + "\\OpenParrot_Cars"
-								{
-									GarageCar car = new GarageCar(file);
-									car.LoadCar();
-									if (GameVersion.versions.ContainsKey(car.ver) && cmbVer.SelectedIndex == GameVersion.versions[car.ver])
-									{
-										lstGarage.Items.Add(car.GetListViewItem(carPreviews));
-										cars.Add(car);
-										lblNoCars.Visible = false;
-									}
-								}
-							}
-                        }
+			foreach (string dir in Directory.GetDirectories(CurrentDirectory, "*"))//, SearchOption.AllDirectories
+			{
+				foreach (string dir2 in Directory.GetDirectories(dir, "*"))//, SearchOption.AllDirectories
+				{
+					foreach (string file in Directory.GetFiles(dir2 + "\\", "*.car"))//, SearchOption.AllDirectories + "\\OpenParrot_Cars"
+					{
+						GarageCar car = new GarageCar(file);
+						car.LoadCar();
+						if (GameVersion.versions.ContainsKey(car.ver) && cmbVer.SelectedIndex == GameVersion.versions[car.ver])
+						{
+							lstGarage.Items.Add(car.GetListViewItem(carPreviews));
+							cars.Add(car);
+							lblNoCars.Visible = false;
+						}
+					}
+				}
+			}
                     if (Directory.Exists("OpenParrot_Cars"))
                     {
                         foreach (string file in Directory.GetFiles("OpenParrot_Cars", "*.car"))
